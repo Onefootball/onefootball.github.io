@@ -7,9 +7,9 @@ categories: ios
 author: Tomáš Linhart
 ---
 
-Apple introduced in Xcode 7 UI testing that allows developers easily test their user interface but if you try it yourself. You will soon discover that tests are not executed in isolation. The application starts where it was left off and it can be very problematic if your application has a state that you modify through your tests. Eg. some kind of on-boarding, creating records and so on.
+Apple introduced in Xcode 7 UI testing that allows developers to easily test their user interface, but if you try it yourself you will soon discover that tests are not executed in isolation. The application starts where it was left off and it can be very problematic if your application has a state that you modify through your tests. Eg. some kind of on-boarding, creating records and so on.
 
-If you have experience with [Appium](http://appium.io/) or other test automation frameworks. You know before each test is executed all content and settings are cleared. So the first thing you could try is executing `NSTask` with some custom shell command and remove the content and settings but unfortunately `NSTask` is not available on iOS.
+If you have experience with [Appium](http://appium.io/) or other test automation frameworks, you know that before each test is executed all content and settings are cleared. So the first thing you could try is executing `NSTask` with some custom shell command and remove the content and settings, but unfortunately `NSTask` is not available on iOS.
 
 If you look at `XCUIApplication`, you will not discover any way to reset the content and settings.
 
@@ -22,7 +22,7 @@ public class XCUIApplication : XCUIElement {
 }
 ```
 
-But as you can see, you can set `launchArguments` which allows you to set custom arguments that can be read when the application starts and based on that, the application can remove its content and settings. So we can easily in the `setUp()` method pass an argument.
+But as you can see, you can set `launchArguments` which allows you to set custom arguments that can be read when the application starts and based on that, the application can remove its content and settings. So we can easily pass an argument to the `setUp()` method.
 
 ```swift
 let application = XCUIApplication()
@@ -134,6 +134,6 @@ extension NSUserDefaults {
 
 This code clears user defaults, all files, keychain and properties on `UIApplication`. Although the last one, you might not need for testing. You might also want to clear iCloud, CloudKit and other places where you store your data but you should have an idea how to do it.
 
-You can find fully working project under [our GitHub account](https://github.com/Onefootball/TestingWithResettingData).
+You can find a fully working project under [our GitHub account](https://github.com/Onefootball/TestingWithResettingData).
 
 Happy testing!
