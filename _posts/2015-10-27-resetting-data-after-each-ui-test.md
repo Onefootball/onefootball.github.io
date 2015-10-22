@@ -4,7 +4,7 @@ title: Resetting the application data after each test with Xcode 7 UI Testing
 permalink: /resetting-application-data-after-each-test-with-xcode7-ui-testing
 tags: ios, swift, xcode, testing, ui-testing
 categories: ios
-author: Tomáš Linhart
+author_id: tomaslinhart
 ---
 
 Apple introduced in Xcode 7 UI testing that allows developers to easily test their user interface, but if you try it yourself you will soon discover that tests are not executed in isolation. The application starts where it was left off and it can be very problematic if your application has a state that you modify through your tests. Eg. some kind of on-boarding, creating records and so on.
@@ -30,7 +30,7 @@ application.launchArguments = ["--ResetData"]
 application.launch()
 ```
 
-After that we need to add a code before `UIApplicationMain` is executed to reset the data. Unfortunately, there is no main.swift on iOS where you could add this code and you have only an annotation on AppDelegate with `@UIApplicationMain`. Fortunately, you can remove this annotation and create a file main.swift where you place a code that you would have in your Objective-C project.
+After that we need to add the following lines before `UIApplicationMain` is executed to reset the data. Unfortunately, there is no `main.swift` on iOS where you could add this code and you have only an annotation on AppDelegate with `@UIApplicationMain`. Fortunately, you can remove this annotation and create a file `main.swift` where you place code that you would have in your Objective-C project.
 
 ```swift
 autoreleasepool {
@@ -38,7 +38,7 @@ autoreleasepool {
 }
 ```
 
-And before that you can easily put a code for resetting the data that you will want to enable only in the debug mode. To enable the DEBUG flag, you need to add to your project settings a value under `Other Swift Flags`. You put `-D DEBUG` for Debug.
+And before that you can easily put the following lines for resetting the data that you will want to enable only in the debug mode. To enable the DEBUG flag, you need to add to your project settings a value under `Other Swift Flags`. You put `-D DEBUG` for Debug.
 
 ```swift
 #if DEBUG
@@ -50,7 +50,7 @@ autoreleasepool {
 #endif
 ```
 
-The last part of this puzzle is to write the application reset logic. Basically, your application can be saving files to folders that are dedicated to it. It can also be saving files to shared folders through app groups and it could be also saving data to user defaults and keychain. So the application reset logic needs to include all of this. Here you can find a code that we use in our application to reset all data we have.
+The last part of this puzzle is to write the application reset logic. Basically, your application can be saving files to folders that are dedicated to it. It can also be saving files to shared folders through app groups and it could be also saving data to user defaults and keychain. So the application reset logic needs to include all of this. Here you can find code that we use in our application to reset all data we have.
 
 ```swift
 import UIKit
