@@ -3,7 +3,7 @@ layout: post
 title: Environment-dependent configuration files with AngularJS and Grunt
 permalink: /environment-dependent-configuration-files-with-angularjs-and-grunt
 tags: javascript, angularjs, grunt, configuration
-author: WebApp Team
+author_id: webapp
 category: webapp
 ---
 

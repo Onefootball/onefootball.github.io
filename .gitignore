@@ -6,3 +6,5 @@ _site
 Gemfile.lock
 node_modules
 package.json
+.idea
+onefootball.github.io.iml

@@ -2,7 +2,6 @@
 
 The website is accessible at https://onefootball.github.io/. It uses the GitHub Pages system to publish static pages generated with Jekyll. The installation and configuration has been done with that tutorial http://www.smashingmagazine.com/2014/08/01/build-blog-jekyll-github-pages/.
 
-
 ## General structure of the project
 
   * All blog posts are in the `_posts/` directory. The naming pattern should be `YYYY-MM-DD-$title.md`.
@@ -10,9 +9,7 @@ The website is accessible at https://onefootball.github.io/. It uses the GitHub 
   * Images should be stored in `images/` and grouped by date (YYYY-MM).
   * Linking to images from a post is done with the `site.baseurl` variable: `![_config.yml]({{ site.baseurl }}/images/2015-07/hacker.jpg)`
 
-
 ## Jekyll (needed to test locally)
-
 
 ### Installing
 
@@ -25,6 +22,7 @@ Quick start (on Debian):
   $ rvm install 2.1.5 # needs >2
   $ ruby --version # if necessary `$ rvm use 2.1.5`
   $ gem install bundler
+  $ bundle install
 ```
 
 ### Running
