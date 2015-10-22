@@ -10,7 +10,8 @@ layout: default
   </div>
 
   <div class="date">
-    Written on {{ page.date | date: "%B %e, %Y" }} {% if page.author %} by {{ page.author }} {% endif %}
+    Written on {{ page.date | date: "%B %e, %Y" }} {% if site.data.authors.[page.author_id].name %} by {{ site.data.authors.[page.author_id].name }} {% endif %}
+    {% if site.data.authors.[page.author_id].twitter %} (<a href="https://twitter.com/{{site.data.authors.[page.author_id].twitter}}">@{{site.data.authors.[page.author_id].twitter}}</a>){% endif %}
   </div>
 
   {% include disqus.html %}

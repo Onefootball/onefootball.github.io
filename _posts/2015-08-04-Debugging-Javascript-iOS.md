@@ -3,7 +3,7 @@ layout: post
 title: How to Debug a webapp on iOS WebView
 permalink: /debugging-javascript-ios/
 tags: javascript, angularjs, debug, ios, xcode, safari
-author: WebApp Team
+author_id: webapp
 category: webapp
 ---
 
