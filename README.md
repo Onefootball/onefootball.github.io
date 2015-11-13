@@ -25,6 +25,8 @@ Quick start (on Debian):
   $ bundle install
 ```
 
+Additionally, you have to have Python with Pygments installed and globally accessible.
+
 ### Running
 
 ```
