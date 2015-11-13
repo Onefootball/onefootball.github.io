@@ -7,9 +7,7 @@ category: Android
 author_id: mbobzien
 ---
 
-##What’s this article about?
-
-We recently struggled with a very annoying issue in our android app. It extremely hard to debug because we were not able to reproduce it properly. Still we got quite a few reports about the bug from users. So we decided them for help debugging the app. In this article I will describe our experiences. Even if you develop for other platforms than android, our experiences might be usefull for you. So keep reading!
+We recently struggled with a very annoying issue in our android app: It was extremely hard to debug because we were not able to reproduce it properly. Still we got quite a few reports about the bug from users, so we decided do ask them for help debugging the app. In this article I will describe our experiences. Even if you develop for other platforms than android, our experiences might be usefull for you. So keep reading!
 
 ##The Problem
 
@@ -20,7 +18,7 @@ This was a programmer's nightmare! A bug keeps getting reported but you don’t 
 
 ##The Plan
 
-Giving up was not an option, so we decided to ask those for help, who actually could reproduce the problem. Our users!
+Giving up was not an option, so we decided to ask those for help who actually could reproduce the problem: Our users!
 Our plan was to create a special version of the app with extensive logging. We hoped that our users would be kind enough to install this version and by doing so, help us identify the issue.
 
 ##Have theories you want to verify
@@ -42,10 +40,10 @@ In general it seems to be helpful if you have at least some idea where you have 
 
 To be able to properly judge which theories if any are true and wich are faulty we decided to log the following data:
 
-- user id
+- The user id
 
-- exact time you log something
-- The overall uptime of the device when you log something
+- The exact time the log was made
+- The overall uptime of the device at the time
  - This helps you to detect restarts of the device
 - The screens the user is navigating to
 
@@ -109,7 +107,7 @@ public class DebugLogEvent extends Event
    }
 }
 ```
-In the constuctor of the DebugLogEvent we set the method name which we formatted like this: “{className}.{methodName}”. The object we passed provided us with the log message through the toString() method. This way we could either pass in a string or any other object which had a well defined toString() method. As you can see all the other fields like the different timeStamps and thread names are automatically filled inside the constructor. The Clock class is just a wrapper which gives us the system time etc.
+In the constuctor of the DebugLogEvent we set the method name which we formatted like this: `{className}.{methodName}`. The object we passed provided us with the log message through the toString() method. This way we could either pass in a string or any other object which had a well defined toString() method. As you can see all the other fields like the different timeStamps and thread names are automatically filled inside the constructor. The Clock class is just a wrapper which gives us the system time etc.
 
 This event is picked up by our logger which in turn writes the information into a file.
 
@@ -123,7 +121,7 @@ More than 25% installed our special version within 24h and tried to reproduce th
 
 ##The result
 
-The results were pretty satisfying. In less then 24 houers after contacting the users we had enough logs to work with. We were able to identify several weak points in our code and also falsified a couple of our theories. This way we were able to identify the problem and fix our code. 
+The results were pretty satisfying. In less then 24 hours after contacting the users we had enough logs to work with. We were able to identify several weak points in our code and also falsified a couple of our theories. This way we were able to identify the problem and fix our code. 
 In the end we had identified a combination of different little issues like race conditions, some poorly designed parts and even one actually obvious bug which we just did not see in the beginning. I guess sometimes you are just blind.
 To make sure our fixes had worked, we created a new version which we sent to the same users as before.
 The next day we opened our mailbox and started to read the responses. It had worked! The users reported the issue being fixed and we were more than relieved.
@@ -137,19 +135,20 @@ Probably you should not ask the users for help every week but maybe we developer
 
 Here are some responses we got from the users:
 
-“Hi,
+>“Hi,
 Everything is OK now.
 Thanks you!!”
 
-
-“Thanks so much for the feedback. Now it works absolutely fine! Cheers!
+-
+>“Thanks so much for the feedback. Now it works absolutely fine! Cheers!
 Another feedback is:
 1. If at the games section, a calendar section could be added, based on our favorites for that month, that would be great. Rather having to go down and scroll for all the matches!
 2. Apart from that, I love Onefootball :) And actively ask my friends to use it too ! “
 
-“Thank you very much for the feedback!
+-
+>“Thank you very much for the feedback!
 I really appreciate that you give some of your time to listen to our issues. One Football is by far the best football app in the market, so I'm glad that you were able to fix the problems.
 Everything is perfect with the 7.4.2 version, so thanks again.
 We'll be in touch.”
 
-...
+>...
