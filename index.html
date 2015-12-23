@@ -13,6 +13,15 @@ layout: default
       </div>
 
       <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+
+      {% if post.tags.size > 0 %}
+        <ul class="post-tags-lists">
+          {% for post_tag in post.tags %}
+            <li class="post-tags">#{{ post_tag }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+
     </article>
   {% endfor %}
 </div>

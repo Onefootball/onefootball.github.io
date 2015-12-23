@@ -11,3 +11,16 @@ a:hover,
 a:active {
     color: #32b846;
 }
+
+.post-tags-lists {
+    list-style-type: none;
+    color: #666;
+    padding-left: 0;
+    font-size: 90%;
+    text-align: right;
+}
+
+.post-tags {
+    display: inline-block;
+    margin: 0 10px;
+}

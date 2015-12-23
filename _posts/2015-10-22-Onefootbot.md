@@ -2,7 +2,7 @@
 layout: post
 title: Onefootbot - the Onefootball chat robot
 permalink: /onefootbot-chat-robot
-tags: hubot, chatops
+tags: [hubot, chatops]
 author_id: dpahl
 category: devops
 ---

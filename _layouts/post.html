@@ -9,6 +9,15 @@ layout: default
     {{ content }}
   </div>
 
+  {% assign post = page %}
+  {% if post.tags.size > 0 %}
+    <ul class="post-tags-lists">
+      {% for post_tag in post.tags %}
+        <li class="post-tags">#{{ post_tag }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
   <div class="date">
     Written on {{ page.date | date: "%B %e, %Y" }} {% if site.data.authors.[page.author_id].name %} by {{ site.data.authors.[page.author_id].name }} {% endif %}
     {% if site.data.authors.[page.author_id].twitter %} (<a href="https://twitter.com/{{site.data.authors.[page.author_id].twitter}}">@{{site.data.authors.[page.author_id].twitter}}</a>){% endif %}
