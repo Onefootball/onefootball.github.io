@@ -2,7 +2,7 @@
 layout: post
 title: Resetting the application data after each test with Xcode 7 UI Testing
 permalink: /resetting-application-data-after-each-test-with-xcode7-ui-testing
-tags: ios, swift, xcode, testing, ui-testing
+tags: [ios, swift, xcode, testing, ui-testing]
 categories: ios
 author_id: tomaslinhart
 ---

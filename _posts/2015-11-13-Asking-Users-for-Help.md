@@ -2,7 +2,7 @@
 layout: post
 title: Asking users for help
 permalink: /asking-users-for-help/
-tags: android, debugging
+tags: [android, debugging]
 category: Android
 author_id: mbobzien
 ---
