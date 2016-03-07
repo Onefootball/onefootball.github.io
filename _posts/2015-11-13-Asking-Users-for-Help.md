@@ -12,7 +12,7 @@ We recently struggled with a very annoying issue in our android app: It was extr
 ##The Problem
 
 Recently we had an issue which was pretty hard to figure out. Users started to report that their settings within the app would partly disappear. For some it was a permanent issue and for others it just happened once and then disappeared again. Even a couple of colleagues reported this problem but sadly for us and luckily for them, it disappeared immediately again, so this didn’t help. More and more reports arrived in our mailbox but we were not able to reproduce the issue.
-The fact that we not only store the settings locally but also sync them with our backend added even more complexity to the problem. We checked our crash logs but there was nothing that could explain the problem. We checked with the backend if they had changed anything in the last weeks but they assured us nothing was touched. Plus, all other platforms worked fine so the issue must have been on our side. 
+The fact that we not only store the settings locally but also sync them with our backend added even more complexity to the problem. We checked our crash logs but there was nothing that could explain the problem. We checked with the backend if they had changed anything in the last weeks but they assured us nothing was touched. Plus, all other platforms worked fine so the issue must have been on our side.
 We started to check our code. First I checked alone but found nothing. Then I asked a colleague to go with me through the logic in case I was just blind. Still we found nothing and still more and more users seemed to encounter the problem.
 This was a programmer's nightmare! A bug keeps getting reported but you don’t have any crash logs and you have no idea how to reproduce the problem.
 
@@ -25,7 +25,7 @@ Our plan was to create a special version of the app with extensive logging. We h
 
 We had several suspicions / theories which we wanted to check:
 
-- Race conditions in our cache. 
+- Race conditions in our cache.
  - <i>This is a problem that typically occurs when you have multiple threads depending on a shared state and you failed to synchronize the different threads properly. The evil thing about this issue is, that it heavily depends on the execution order of your threads. Everything can go fine a hundred times but every once in awhile your threads randomly get processor time in a specific order which causes the bug to appear. And when you have several million users this will happen a lot even if it does not happen for you!</i>
 
 - A logic problem which we just did not see when checking the code.
@@ -121,15 +121,15 @@ More than 25% installed our special version within 24h and tried to reproduce th
 
 ##The result
 
-The results were pretty satisfying. In less then 24 hours after contacting the users we had enough logs to work with. We were able to identify several weak points in our code and also falsified a couple of our theories. This way we were able to identify the problem and fix our code. 
+The results were pretty satisfying. In less then 24 hours after contacting the users we had enough logs to work with. We were able to identify several weak points in our code and also falsified a couple of our theories. This way we were able to identify the problem and fix our code.
 In the end we had identified a combination of different little issues like race conditions, some poorly designed parts and even one actually obvious bug which we just did not see in the beginning. I guess sometimes you are just blind.
 To make sure our fixes had worked, we created a new version which we sent to the same users as before.
 The next day we opened our mailbox and started to read the responses. It had worked! The users reported the issue being fixed and we were more than relieved.
 
 ##Conclusion
 
-Contacting the users and asking them for help did not only help us find our issue faster, it also seems as if  the users greatly appreciate it, when they actually see that you work on the problem they are experiencing. 
-For us it felt a bit like a defeat to ask for help but to the users it just showed that we care and that we try everything we can to solve the problem. 
+Contacting the users and asking them for help did not only help us find our issue faster, it also seems as if  the users greatly appreciate it, when they actually see that you work on the problem they are experiencing.
+For us it felt a bit like a defeat to ask for help but to the users it just showed that we care and that we try everything we can to solve the problem.
 No one wrote us a negative response and in the end I firmly believe, that it is even more likely now that those who have helped us solve the issue will stay loyal users of Onefootball.
 Probably you should not ask the users for help every week but maybe we developers should keep in mind that we have this option and that it’s not a bad one at all.
 

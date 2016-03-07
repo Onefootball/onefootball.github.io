@@ -96,3 +96,40 @@ yourname:
 ```
 
 You can then use the key `yourname` in the `author_id` field of your post.
+
+
+### Tags
+
+When creating a post remember to:
+
+**1. Add the header tags to your post.md**
+
+```
+tags: [tag1, tag2, tag3]
+```
+
+**2. Add your entry to the tag database**
+
+Foreach tag you use in your post, check the `_data/tags.yml` and add the items you need.
+
+```
+- slug: tag1
+  name: Fancy Tag 1
+
+
+- slug: tag2
+  name: Cool Descr Tag 2
+
+```
+
+**3. Create the index for your tags**
+Check the `tag/` folder and create a file `mytagslug.md` for each tag you need:
+
+```
+---
+layout: blog_by_tag
+title: 'Articles by tag: ${mytagslug}'
+tag: ${mytagslug}
+permalink: /tag/${mytagslug}/
+---
+```

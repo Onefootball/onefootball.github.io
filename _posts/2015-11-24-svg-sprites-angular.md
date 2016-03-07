@@ -2,7 +2,7 @@
 layout: post
 title: Svg sprites
 permalink: /SVG-sprites
-tags: [AngularJS, SVG, sprites]
+tags: [angularjs, SVG, sprites]
 author_id: sinisag
 category: webapp
 ---
