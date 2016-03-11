@@ -2,7 +2,7 @@
 layout: post
 title: CSS-essentials, Onefootball open source CSS project
 permalink: /onefootball-open-source-css-essentails
-tags: css, flex, onefootball, css-essentials, open source
+tags: [css, flex, onefootball, css-essentials, open-source]
 author_id: sinisag
 category: webapp
 ---

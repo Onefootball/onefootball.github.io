@@ -1,0 +1,9 @@
+<ul>
+{% for tag in site.data.tags %}
+    <li>
+      <a title="Open all articles tagged #{{tag.name}}" href="{{ site.baseurl }}/tag/{{tag.slug}}">
+        #{{tag.name}}
+      </a>
+    </li>
+{% endfor %}
+</ul>

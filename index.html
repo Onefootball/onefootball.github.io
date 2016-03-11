@@ -17,7 +17,14 @@ layout: default
       {% if post.tags.size > 0 %}
         <ul class="post-tags-lists">
           {% for post_tag in post.tags %}
-            <li class="post-tags">#{{ post_tag }}</li>
+            {% for data_tag in site.data.tags %}
+              {% if data_tag.slug == post_tag %}
+                {% assign tag = data_tag %}
+                <li class="post-tags">
+                  <a href="{{ site.baseurl }}/tag/{{ tag.slug }}/">#{{ tag.name }}</a>
+                </li>
+              {% endif %}
+            {% endfor %}
           {% endfor %}
         </ul>
       {% endif %}

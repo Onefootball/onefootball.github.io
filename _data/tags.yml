@@ -1,0 +1,104 @@
+- slug: android
+  name: android
+
+- slug: angularjs
+  name: angularjs
+
+- slug: aws
+  name: aws
+
+- slug: azure
+  name: azure
+
+- slug: backend
+  name: backend
+
+- slug: chatops
+  name: chatops
+
+- slug: cli
+  name: cli
+
+- slug: configuration
+  name: configuration
+
+- slug: css
+  name: css
+
+- slug: css-essentials
+  name: css-essentials
+
+- slug: debug
+  name: debug
+
+- slug: debugging
+  name: debugging
+
+- slug: download
+  name: download
+
+- slug: flex
+  name: flex
+
+- slug: go(lang)
+  name: go(lang)
+
+- slug: go
+  name: go
+
+- slug: grunt
+  name: grunt
+
+- slug: hello
+  name: hello
+
+- slug: hubot
+  name: hubot
+
+- slug: ios
+  name: ios
+
+- slug: javascript
+  name: javascript
+
+- slug: microsoft
+  name: microsoft
+
+- slug: notification
+  name: notification
+
+- slug: onefootball
+  name: onefootball
+
+- slug: open-source
+  name: open source
+
+- slug: push
+  name: push
+
+- slug: s3
+  name: s3
+
+- slug: safari
+  name: safari
+
+- slug: sprites
+  name: sprites
+
+- slug: SVG
+  name: SVG
+
+- slug: swift
+  name: swift
+
+- slug: testing
+  name: testing
+
+- slug: tool
+  name: tool
+
+- slug: ui-testing
+  name: ui-testing
+
+- slug: xcode
+  name: xcode
